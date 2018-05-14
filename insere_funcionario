@@ -1,0 +1,10 @@
+<?php
+include_once ("conecta.php");
+include_once ("database_funcionarios.php");
+
+$conexao = new BancoDeDados('localhost', 'root', '', 'north');
+$funcionariosIns = new Funcionarios($conexao);
+
+$funcionariosIns -> insereFuncionario($Nome, $Sobrenome, $Titulo, $TituloCortesia, $DataNac, $DataAdmissao, $Endereco, $Cidade, $Regiao, $Cep, $Pais, $Extensao, $Notas, $Reportase, $FotoCaminho);
+        
+header('Location:funcionarios.php');
